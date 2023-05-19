@@ -2,7 +2,7 @@
 
 DB 서버가 **데이터를 보존**하는 **영속(persistence)** 계층이기 때문에 웹 서버나 애플리케이션 서버와 비교했을 때 다중화에 대해 고민해야할 부분이 많다.
 
-![Untitled](../DB%20multiplexing/DB%20%E1%84%83%E1%85%A1%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%92%E1%85%AA%20+%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled.png)
+![Untitled](https://github.com/developer-essential-topics-2023/system-design-interview/blob/main/1%EC%9E%A5%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1/DB%20multiplexing/DB%20%EB%8B%A4%EC%A4%91%ED%99%94%20%2B%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled.png)
 
 위의 사진처럼 DB 서버와 저장소가 각각 한 대로 구성되어 있다고 해보자. 만약 DB 서버가 다운되면 관련 서비스 전체가 중단되어버릴 것이다. 
 
@@ -10,7 +10,7 @@ DB 서버가 **데이터를 보존**하는 **영속(persistence)** 계층이기 
 
 # 클러스터링 ****Clustering****
 
-![Untitled](../DB%20multiplexing/DB%20%E1%84%83%E1%85%A1%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%92%E1%85%AA%20+%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled%201.png)
+![Untitled](https://github.com/developer-essential-topics-2023/system-design-interview/blob/main/1%EC%9E%A5%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1/DB%20multiplexing/DB%20%EB%8B%A4%EC%A4%91%ED%99%94%20%2B%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled%201.png)
 
 **DB 서버의 다중화** 클러스터링은 2대의 DB 서버가 동시에 가동되는지에 따라 2가지로 분류한다.
 
@@ -77,7 +77,7 @@ Master DB 와 Slave DB를 복제하여 데이터를 분산시키는 방법으로
 
 복수의 서버가 한 개의 저장소를 공유하는 것을 Shared Disk, 네트워크 이외의 자원을 아무것도 공유하지 않는 방식을 Shared Nothing 구조라 한다.
 
-![Untitled](../DB%20multiplexing/DB%20%E1%84%83%E1%85%A1%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%92%E1%85%AA%20+%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled%202.png)
+![Untitled](https://github.com/developer-essential-topics-2023/system-design-interview/blob/main/1%EC%9E%A5%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1/DB%20multiplexing/DB%20%EB%8B%A4%EC%A4%91%ED%99%94%20%2B%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled%202.png)
 
 앞선 Active-Active 클러스터 구성에서 저장소 부분이 병목되는 경우가 있는데, 이는 복수의 서버가 1대의 저장소를 공유(Shared Disk)하기 때문이다. 이를 해결하기 위해 고안된 것이 Shared Nothing이다.
 
@@ -87,7 +87,7 @@ Shared Nothing에서는 DB 서버와 저장소로 구성된 세트를 늘려서 
 
 # DB 아키텍처 패턴 정리
 
-![출처 - [https://hololo-kumo.tistory.com/220](https://hololo-kumo.tistory.com/220)](../DB%20multiplexing/DB%20%E1%84%83%E1%85%A1%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%92%E1%85%AA%20+%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled%203.png)
+![출처 - [https://hololo-kumo.tistory.com/220](https://hololo-kumo.tistory.com/220)](https://github.com/developer-essential-topics-2023/system-design-interview/blob/main/1%EC%9E%A5%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%EC%88%98%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EA%B7%9C%EB%AA%A8%20%ED%99%95%EC%9E%A5%EC%84%B1/DB%20multiplexing/DB%20%EB%8B%A4%EC%A4%91%ED%99%94%20%2B%20CQRS%20977efa00dcc649eda66bacff3fe037c1/Untitled%203.png)
 
 출처 - [https://hololo-kumo.tistory.com/220](https://hololo-kumo.tistory.com/220)
 
